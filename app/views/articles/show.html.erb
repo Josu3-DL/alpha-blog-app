@@ -1,0 +1,27 @@
+<% if flash[:notice] %>
+    <h3> 
+        <%= flash[:notice]%>
+     </h3>
+<% end %>
+
+<article>
+<span>
+    <strong>
+        Title: <%= @article.title %>
+    </strong>
+</span>
+</article>
+
+<article>
+    <span>
+        <strong>
+            Description: <%= @article.description %>
+        </strong>
+    </span>
+</article>
+
+
+<%= link_to "Back", articles_path %>
+<%= link_to "edit", edit_article_path(@article) %>
+<%= button_to "Delete", article_path(@article), method: :delete, data: {turbo_confirm: "Are you sure?"} %>
+ 
