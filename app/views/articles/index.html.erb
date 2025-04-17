@@ -1,47 +1,33 @@
 
-<h1>Articles List</h1>
+<h1 class="text-center">Articles List</h1>
 
-<table>
-<thead>
-    <tr>
-        <th>Title</th>
-        <th>Description</th>
-    </tr>
-<thead>
-
-<tbody>
-    <% @articles.each do |article|%>        
-    <tr>
-    <td>
-        <strong>
-           <%= article.title %>
-        </strong>
-    </td>
-     <td>
-        <strong>
-           <%= article.description %>
-        </strong>
-    </td>
-    <td>
-        <strong>
-           <%= link_to "show", article_path(article.id) %>
-        </strong>
-    </td>
-    <td>
-        <strong>
-           <%= link_to "edit", edit_article_path(article) %>
-        </strong>
-    </td>
-    <td>
-        <strong>
-           <%= button_to "Delete", article_path(article), method: :delete, data: {turbo_confirm: "Are you sure?"} %>
-        </strong>
-    </td>
-    </tr>
-<% end %>
-</tbody>
-</table>
-
+<div class="container">
+   <% @articles.each do |article| %>
+     <div class="row justify-content-md-center">
+       <div class="col-8 mt-4">
+         <div class="card text-center shadow mb-5 bg-white rounded">
+           <div class="card-header font-italic">
+             by Mashrur Hossain
+           </div>
+           <div class="card-body">
+             <h5 class="card-title"><%= link_to article.title, article_path(article), class: "text-success" %></h5>
+             <p class="card-text"><%= truncate(article.description, length: 100) %></p>
+             <div class="btns-articles">
+             <%= link_to "View", article_path(article), class: "btn btn-outline-success" %>
+             <%= link_to "Edit", edit_article_path(article), class: "btn btn-outline-info" %>
+             <%= button_to "Delete", article_path(article), class: "btn btn-outline-danger", method: :delete, data: {turbo_confirm: "Are you sure?"} %>
+             </div>
+           </div>
+           <div class="card-footer text-muted">
+             <small>Created <%= time_ago_in_words(article.created_at) %> ago, 
+             edited <%= time_ago_in_words(article.updated_at) %> ago</small>
+           </div>
+         </div>
+       </div>
+     </div>
+   <% end %>
+   </div>
+ </div>
 
 <p>
     <%= link_to "Create new Article", new_article_path %>

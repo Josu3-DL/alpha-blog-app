@@ -1,25 +1,16 @@
-<% if  @article.errors.any? %>
-    <h3> The following errors prevented the article from being saved </h3>
-    <ul>
-    <% @article.errors.full_messages.each do |msg| %>
-        <li> <%= msg %> </li>
-    <% end %>
-    </ul>
-<% end %>
-
 <%= form_with model: @article, local: true do |f| %>
-    
-    <p>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-    </p>
+    <div class="form-group">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: "form-control", placeholder:"enter a title" %>
+    </div>
 
-    <p>
-    <%= f.label :description %>
-    <%= f.text_area :description  %>
-    </p>
+    <div class="form-group">
+        <%= f.label :description %>
+        <%= f.text_area :description, class:"form-control", rows:8 , placeholder:"enter a description" %>
+    </div>
 
-    <p>
-        <%= f.submit %>
-    </p>
+    <div class="form-group d-flex justify-content-center align-items-center">
+       <%= link_to "Back", articles_path, class: "btn btn-secondary mt-4"%>
+        <%= f.submit class: "btn btn-primary mt-4 center-block ms-2" %>
+    </div>
 <% end %>

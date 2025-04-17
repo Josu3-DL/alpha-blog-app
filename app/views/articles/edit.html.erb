@@ -1,5 +1,11 @@
-<h1>Edit new Article</h1>
+<div class="container">
+     <%= render 'shared/errors'%>
+    <div class="row justify-content-md-center">
+        <div class="col-4 mt-4 form-container ">
+            <h1 class="text-center">Edit Article</h1>
+            <%= render 'form' %>
+       </div>
+    </div>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to "Cancel update", articles_path %>
+<!-- <div class="col-4 mt-4 form-container"> -->

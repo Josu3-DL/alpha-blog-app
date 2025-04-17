@@ -8,3 +8,68 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+
+ .navbar{
+    background: rgba(0, 0, 0, 0.984) !important;
+ }
+
+ 
+ #logo{
+    float: left;
+    font-size: 1.7rem;
+    font-weight: bold;
+    letter-spacing: -1.5px;
+    color: #fff;
+    text-transform: uppercase;
+ }
+
+
+ .nav-link {
+    color: white !important;
+ }
+
+ .navbar-brand{
+    color: white;
+ }
+
+ #home-container {
+    margin-top: 25px;
+ }
+
+ .jumbotron{
+    background-image: url('/images/writting.jpg');
+    background-size: cover;
+    background-position: center;
+   height: 400px;
+ }
+
+
+ html,
+ body {
+   height: 100%;
+   background-color: lightgrey;
+ }
+ 
+ #page-content {
+   flex: 1 0 auto;
+   background-color: lightgrey;
+ }
+ 
+ #sticky-footer {
+   flex-shrink: none;
+ }
+
+.btns-articles{
+   display: flex;
+   justify-content: center;
+   gap: 10px;
+}
+
+.form-container{
+   background-color: rgb(230, 219, 219);
+   padding: 20px;
+   border-radius: 8px;
+   box-shadow: 2px 4px 10px gray;
+}
+
