@@ -1,7 +1,7 @@
-<% if @article.errors.any? %>
+<% if obj.errors.any? %>
    <div class="alert alert-danger alert-dismissible fade show" role="alert">
      <ul>
-       <% @article.errors.full_messages.each do |msg| %>
+       <% obj.errors.full_messages.each do |msg| %>
          <li><%= msg %></li>
        <% end %>
      </ul>
