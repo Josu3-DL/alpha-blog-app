@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   get "about", to: "pages#about"
 
   resources :articles
-  resources :users, only: [:edit, :update, :create, :new]
+  resources :users, only: [:edit, :update, :create, :new, :show]
  
 end
