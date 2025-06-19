@@ -14,18 +14,23 @@
             Actions
           </a>
           <ul class="dropdown-menu">
-            <li><%= link_to "Create Article", new_article_path, class: "dropdown-item", data: {turbo: false }%></li>
+           <% if logged_in? %>
+              <li><%= link_to "Create Article", new_article_path, class: "dropdown-item", data: {turbo: false }%></li>
+            <% end %>
             <li> <%= link_to "Articles", articles_path, class: "dropdown-item", data: {turbo: false} %> </li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
-        <li class="nav-item">
-          <%= link_to "Log in", login_path, class:"nav-link" %>
-        </li>
-        <li class="nav-item">
+        <% if logged_in? %>
+         <li class="nav-item">
            <%= link_to "Log out", logout_path, class:"nav-link" %>
         </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Log in", login_path, class:"nav-link" %>
+          </li>
+        <% end %>
       </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
