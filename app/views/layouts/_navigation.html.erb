@@ -34,6 +34,9 @@
               <li>
                 <%= link_to "Edit #{current_user.username} profile", edit_user_path(current_user), class: "dropdown-item" %>
               </li>
+              <li>
+                <%= button_to "Delete #{current_user.username} profile", user_path(current_user), class: "dropdown-item text-danger", method: :delete, data: {confirm: "Are you sure?"} %>
+              </li>
             </ul>
           </li>
           <li class="nav-item">
