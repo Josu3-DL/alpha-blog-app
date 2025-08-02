@@ -12,7 +12,7 @@
              <h5 class="card-title"><%= pluralize(user.articles.count, "Article") %> </h5>
              <div class="btns-articles">
              <%= link_to "View profile", user_path(user), class: "btn btn-outline-success" %>
-             <% if logged_in? && user == current_user %>
+             <% if logged_in? && (user == current_user || current_user.admin?) %>
               <%= link_to "Edit profile", edit_user_path(user), class: "btn btn-outline-info" %>
               <%= button_to "Delete profile", user_path(user),  class: "btn btn-outline-danger", method: :delete, data: {turbo_confirm: "Are you sure?"} %>
              <% end %>
